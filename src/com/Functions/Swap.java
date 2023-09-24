@@ -19,7 +19,8 @@ public class Swap {
     }
 
     private static void changeName(String name) {
-        name = "Saksham Tandon";
+
+         name = "Saksham Tandon";
     }
 
     static void swap(int a, int b) {
