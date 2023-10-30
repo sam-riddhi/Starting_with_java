@@ -36,13 +36,13 @@ public class Hash_Map {
 //            System.out.print(val + " ");
 //        }
 //        System.out.println();
-
-//        for( Map.Entry<String, Integer> e : map.entrySet());
-//        {
-//            System.out.println(e.getKey());
-//            System.out.println(e.getValue());
-//        }
-
+        // how to iterate a map using for loop
+        for( Map.Entry<String, Integer> e : map.entrySet())
+        {
+            System.out.println(e.getKey());
+            System.out.println(e.getValue());
+        }
+        // To print using key
         Set<String> keys = map.keySet();
         for(String key : keys) {
             System.out.println(key+ " " + map.get(key));
