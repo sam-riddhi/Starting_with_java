@@ -1,5 +1,15 @@
 package com.Pattern;
-
+/*
+            *
+           * *
+          * * *
+         * * * *
+        * * * * *
+         * * * *
+          * * *
+           * *
+            *
+ */
 public class Pattern28 {
     public static void main(String[] args) {
         pattern28(5);
