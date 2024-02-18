@@ -11,6 +11,8 @@ public class Fibo {
         if (n < 2) {
             return n;
         }
+        // This is not tail recursion
+        // because this is not the last statement that is running by the function
         return fibo(n-1) + fibo(n-2);
     }
 }
