@@ -15,6 +15,9 @@ public class NumbersExampleRecursion {
 
         // Recursive call
         // If you are calling a function again and again,  you can treat it as a separate call in the stack
+
+        // this is called tail recursion
+        // this is the last function call
         print(n+1);
     }
 }
