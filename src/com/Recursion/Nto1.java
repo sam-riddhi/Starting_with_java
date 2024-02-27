@@ -2,7 +2,7 @@ package com.Recursion;
 
 public class Nto1 {
     public static void main(String[] args) {
-        funcRev(5);
+        funcBoth(5);
     }
 
     static void func(int n)
@@ -22,6 +22,16 @@ public class Nto1 {
             return;
         }
         funcRev(n-1);
+        System.out.println(n);
+    }
+    static void funcBoth(int n)
+    {
+        if (n == 0)
+        {
+            return;
+        }
+        System.out.println(n);
+        funcBoth(n-1);
         System.out.println(n);
     }
 }
