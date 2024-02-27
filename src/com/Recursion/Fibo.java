@@ -5,10 +5,10 @@ public class Fibo {
 //        int ans  = fibo(6);
 //        System.out.println(ans);
 
-        for (int i = 0; i < 11; i++)
-        {
-            System.out.println(fiboFormula(i));
-        }
+//        for (int i = 0; i < 11; i++)
+//        {
+//            System.out.println(fiboFormula(i));
+//        }
         System.out.println(fiboFormula(50));
     }
 
