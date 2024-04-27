@@ -29,7 +29,20 @@ class Addition extends JFrame implements ActionListener
         add(b);
         add(l);
 
-        b.addActionListener(this); //ActionListener is an interface
+        // Lambda expression only works on functional Interface
+        //  - interface with only one method declaration
+
+        ActionListener al = new ActionListener() {
+            public void actionPerformed(ActionEvent ae)
+            {
+                int num1 = Integer.parseInt(t1.getText());
+                int num2 = Integer.parseInt(t2.getText());
+                int value = num1 + num2;
+                l.setText(value + "");
+            }
+        };
+
+        b.addActionListener(al); //ActionListener is an interface
 
         setLayout(new FlowLayout());
         setVisible(true);
