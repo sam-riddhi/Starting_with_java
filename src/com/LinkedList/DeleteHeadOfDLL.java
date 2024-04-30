@@ -56,10 +56,72 @@ public class DeleteHeadOfDLL {
 
         return head;
     }
+
+    private static Node_ deleteTail(Node_ head)
+    {
+        if(head == null || head.next == null)
+        {
+            return null;
+        }
+        Node_ tail = head;
+        while(tail.next != null)
+        {
+            tail = tail.next;
+        }
+        Node_ newtail = tail.back;
+        newtail.next = null;
+        tail.back = null;
+
+        return  head;
+    }
+
+    private static Node_ deleteKthelement(Node_ head, int k)
+    {
+        if(head == null)
+        {
+            return null;
+        }
+
+        int cnt = 0;
+        Node_ kNode = head;
+        while(kNode != null)
+        {
+            cnt++;
+            if(cnt == k)
+                break;
+            kNode = kNode.next;
+        }
+
+        Node_ prev = kNode.back;
+        Node_ front = kNode.next;
+
+        if(prev == null && front == null)
+        {
+            return null;
+        }
+
+        else if(prev == null)
+        {
+            return deleteHead(head);
+        }
+        else if (front == null)
+        {
+            return deleteTail(head);
+        }
+
+        prev.next = front;
+        front.back = prev;
+
+        kNode.next = null;
+        kNode.back = null;
+        return head;
+    }
     public static void main(String[] args) {
         int[] arr = {12, 5, 6, 8};
         Node_ head = convertArr2Dll(arr);
-        head = deleteHead(head);
+       // head = deleteHead(head);
+       // head = deleteTail(head);
+        head = deleteKthelement(head, 3);
         print(head);
     }
 
