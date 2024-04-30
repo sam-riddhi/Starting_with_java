@@ -2,10 +2,10 @@ package com.LinkedList;
 
 class Nodee {
     int data;
-    Nodee next;
-    Nodee back;
+    Node_ next;
+    Node_ back;
 
-    Nodee(int data1, Nodee next1, Nodee back1)
+    Nodee(int data1, Node_ next1, Node_ back1)
     {
         this.data = data1;
         this.next = next1;
@@ -20,7 +20,7 @@ class Nodee {
     }
 }
 public class DoublyLinkedList {
-    public static void print(Nodee head)
+    public static void print(Node_ head)
     {
         while(head != null)
         {
@@ -29,13 +29,13 @@ public class DoublyLinkedList {
         }
         System.out.println();
     }
-    private static Nodee convertArr2Dll(int[] arr)
+    private static Node_ convertArr2Dll(int[] arr)
     {
-        Nodee head = new Nodee(arr[0]);
-        Nodee prev = head;
+        Node_ head = new Node_(arr[0]);
+        Node_ prev = head;
         for(int i = 1; i < arr.length; i++)
         {
-            Nodee temp = new Nodee(arr[i], null, prev);
+            Node_ temp = new Node_(arr[i], null, prev);
             prev.next = temp;
             prev = temp;
         }
@@ -43,7 +43,7 @@ public class DoublyLinkedList {
     }
     public static void main(String[] args) {
         int[] arr = {12, 5, 6, 8};
-        Nodee head = convertArr2Dll(arr);
+        Node_ head = convertArr2Dll(arr);
         print(head);
 
     }
