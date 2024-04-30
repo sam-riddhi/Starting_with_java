@@ -116,13 +116,33 @@ public class DeleteHeadOfDLL {
         kNode.back = null;
         return head;
     }
+
+//    private static Node_ deleteNode(Node_ temp)
+//    {
+//        Node_ prev = temp.back;
+//        Node_ front = temp.next;
+//
+//        if(front == null)
+//        {
+//            prev.next = null;
+//            temp.back = null;
+//            return;
+//        }
+//
+//        prev.next = front;
+//        front.back = prev;
+//
+//        temp.next = temp.back = null;
+//    }
     public static void main(String[] args) {
         int[] arr = {12, 5, 6, 8};
         Node_ head = convertArr2Dll(arr);
        // head = deleteHead(head);
        // head = deleteTail(head);
-        head = deleteKthelement(head, 3);
+        //head = deleteKthelement(head, 3);
+        //deleteNode(head);
         print(head);
+        //return 0;
     }
 
 }
