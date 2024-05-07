@@ -2,25 +2,25 @@ package com.LinkedList;
 
 class Nodee {
     int data;
-    Nodee_ next;
-    Nodee_ back;
+    Nodee next;
+    Nodee prev;
 
-    Nodee(int data1, Nodee_ next1, Nodee_ back1)
+    Nodee(int data1, Nodee next1, Nodee prev)
     {
         this.data = data1;
         this.next = next1;
-        this.back = back1;
+        this.prev = prev;
     }
 
     Nodee(int data1)
     {
         this.data = data1;
         this.next = null;
-        this.back = null;
+        this.prev = null;
     }
 }
 public class DoublyLinkedList {
-    public static void print(Nodee_ head)
+    public static void print(Nodee head)
     {
         while(head != null)
         {
@@ -29,21 +29,40 @@ public class DoublyLinkedList {
         }
         System.out.println();
     }
-    private static Nodee_ convertArr2Dll(int[] arr)
+    private static Nodee convertArr2Dll(int[] arr)
     {
-        Nodee_ head = new Nodee_(arr[0]);
-        Nodee_ prev = head;
+        Nodee head = new Nodee(arr[0]);
+        Nodee prev = head;
         for(int i = 1; i < arr.length; i++)
         {
-            Nodee_ temp = new Nodee_(arr[i], null, prev);
+            Nodee temp = new Nodee(arr[i], null, prev);
             prev.next = temp;
             prev = temp;
         }
         return head;
     }
+
+    public static Nodee reverseaDLL(Nodee head)
+    {
+        if(head == null || head.next == null)
+        {
+            return head;
+        }
+        Nodee prev = null;
+        Nodee current = head;
+        while(current != null)
+        {
+            prev = current.prev;
+            current.prev = current.next;
+            current.next = prev;
+            current = current.prev;
+        }
+        return prev.prev;
+    }
     public static void main(String[] args) {
         int[] arr = {12, 5, 6, 8};
-        Nodee_ head = convertArr2Dll(arr);
+        Nodee head = convertArr2Dll(arr);
+        head = reverseaDLL(head);
         print(head);
 
     }
